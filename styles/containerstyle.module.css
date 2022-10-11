@@ -1,0 +1,67 @@
+.container{
+    margin: 1.8rem;
+}
+
+
+@media screen and (max-width: 1240px){
+
+    .container{
+        margin: 0.5rem;
+      }
+    
+}
+
+
+@media screen and (max-width: 942px){
+  .container{
+    margin: 0.5rem;
+  }
+  }
+
+
+
+   /* -------GRID CONTAINER------- */
+
+   .nftgrid__container{
+    display: grid;
+    grid-template-columns: repeat(4 , 1fr);
+    gap: 1rem;
+    
+}
+
+
+
+
+@media screen and (max-width: 1545px){
+    .nftgrid__container{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+/* @media screen and (max-width: 1180px){
+    .nftgrid__container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+} */
+@media screen and (max-width: 842px){
+    .nftgrid__container{
+        place-items: center;
+    }
+}
+@media screen and (max-width: 1020px){
+    .nftgrid__container{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (max-width: 842px){
+    .nftgrid__container{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media screen and (max-width: 740px){
+.nftgrid__container{
+    grid-template-columns: 1fr 1fr;
+}
+}
+
+
+
