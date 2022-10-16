@@ -5,10 +5,11 @@ import {create as ipfsClient} from 'ipfs-http-client'
 //import { nftaddress, nftmarketaddress } from '../config'
 import mintNFT from '../../contracts/selfmint.json'
 import {useRouter} from 'next/router'
-import Topnav from '../topnav/topnav'
+import Topnav from '../topnav/Topnav'
 import styles from '../../styles/containerstyle.module.css';
 import classes from '../mintnfts/mintnfts.module.css';
-
+import Connect from '../connectwallet/Connectwallet'
+import Connectwallet from '../connectwallet/Connectwallet'
 
 //import KBMarket from '../artifacts/contracts/KBMarket.sol/KBMarket.json'
 
@@ -41,9 +42,11 @@ export default function MintItem(props) {
 
   useEffect( ()=>{
      //uploadPicture()
+     //console.log("hook",fileUrl)
     if(fileUrl!==null){  
+      if(fileUrl!==undefined){
         const {name, description} = formInput 
-        console.log(fileUrl)
+       // console.log("nn",fileUrl)
         if(!name || !description || !fileUrl){
           alert("Name , Description and upload file is mandatory. sometime wait until the image is uploaded")
           return 
@@ -52,19 +55,25 @@ export default function MintItem(props) {
         const data = JSON.stringify({
             name, description, image: fileUrl
         })
-        try {
-            const added = client.add(data)
-            const url = `https://infura-ipfs.io/ipfs/${added.path}`
-            // run a function that creates sale and passes in the url 
-            createSale(url)
-            setFileUrl(null)
-            } catch (error) {
-                console.log('Error uploading file:', error)
-            }
-
+      
+        addData(data);
     }
+  }
 
   },[fileUrl])
+
+  async function addData(data) {
+    try {
+      const added = await client.add(data)
+      const url = `https://infura-ipfs.io/ipfs/${added.path}`
+      // run a function that creates sale and passes in the url 
+      //console.log(url)
+      createSale(url)
+     
+      } catch (error) {
+          console.log('Error uploading file:', error)
+      }
+  }
 
 
   // set up a function to fireoff when we update files in our form - we can add our 
@@ -156,7 +165,11 @@ export default function MintItem(props) {
 
   return (
     <div style={{display: `${props.display}`}} className={`${classes.main} ${styles.container}`}>
-    <Topnav  address={props.address} connect={props.connect}  walletdiscon={props.walletdiscon}  walletswitch={props.walletswitch} getSearchText={props.getSearchText}/>
+    {/* <Topnav  address={props.address} connect={props.connect}  walletdiscon={props.walletdiscon}  walletswitch={props.walletswitch} getSearchText={props.getSearchText}/> */}
+    <div className={`${classes.mint__top} ${styles.container}`}>
+
+    <Connectwallet address={props.address} connect={props.connect}  walletdiscon={props.walletdiscon}  walletswitch={props.walletswitch} getSearchText={props.getSearchText}/>
+    </div>
       <h1 className={styles.container}>Mint NFTs</h1>
       <div className={classes.mint__box}>
         <div className={`${classes.mint__bg} ${styles.container}`}>

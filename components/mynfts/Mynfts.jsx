@@ -2,9 +2,10 @@ import { useEffect,useState } from 'react';
 import classes from '../mynfts/mynfts.module.css';
 import {ethers } from "ethers";
 import mktplace  from "../../contracts/marketplace.json";
-import Topnav from '../topnav/topnav';
+import Topnav from '../topnav/Topnav';
 import styles from '../../styles/containerstyle.module.css';
 import Nftbridge from '../nftbridge/Nftbridge';
+import Connect from '../connectwallet/Connectwallet'
 
 
 //import waladdress from "../_app"
@@ -104,8 +105,11 @@ export default function MyNftPage(props) {
 
   return (
     <div style={{display: `${props.display}`}}  className={`${classes.main} ${styles.container}`}>
-     
-    <Topnav address={props.address} connect={props.connect}  walletdiscon={props.walletdiscon}  walletswitch={props.walletswitch} getSearchText={props.getSearchText}/>
+     <div className={`${classes.mynfts__top} ${styles.container}`}>
+
+<Connect address={props.address} connect={props.connect} walletdiscon={props.walletdiscon} walletswitch={props.walletswitch} />
+</div>
+    {/* <Topnav address={props.address} connect={props.connect}  walletdiscon={props.walletdiscon}  walletswitch={props.walletswitch} getSearchText={props.getSearchText}/> */}
       <h1 className={styles.container}>My NFTs</h1>
  
     <div className={`${classes.nftgrid__container} ${styles.container}`}>

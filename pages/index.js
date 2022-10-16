@@ -469,7 +469,7 @@ setsearchtext(item)
 
     <HiOutlineMenuAlt1 className={classes.open__menu} onClick={toggle} getSearchText={getSearchText}  searchtext={searchtext}/>
 
-    <Collection address={address} connect={connectwallet}  walletdiscon={disconnect}  walletswitch={walletswitch} web3provider={web3provider} ssigner={signer} getSearchText={getSearchText} searchtext={searchtext}/>
+    {/* <Collection address={address} connect={connectwallet}  walletdiscon={disconnect}  walletswitch={walletswitch} web3provider={web3provider} ssigner={signer} getSearchText={getSearchText} searchtext={searchtext}/> */}
  
 
   </div>

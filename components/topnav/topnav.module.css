@@ -21,10 +21,13 @@
 
 .search__collection input{
     justify-self: flex-start;
-    width: 20vw;
+    /* width: 20vw; */
     color: white;
     background: transparent;
     
+}
+.search__collection input::placeholder{
+    width: 100%;
 }
 
 

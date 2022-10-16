@@ -84,11 +84,12 @@ export default async function handler(req, res) {
         const address = req.body.address;
        // console.log("add",address)
         //const chain= "5777";
-        const chain= "bsc testnet";
-        //const chain= 'bsc';
+        // const chain= "bsc testnet";
+        const chain= 'bsc';
         let nftsData=[];
 
-         await axios.get(`https://deep-index.moralis.io/api/v2/${address}/nft?chain=bsc%20testnet&format=decimal`,
+        //  await axios.get(`https://deep-index.moralis.io/api/v2/${address}/nft?chain=bsc%20testnet&format=decimal`,
+         await axios.get(`https://deep-index.moralis.io/api/v2/${address}/nft?chain=bsc&format=decimal`,
          {
             headers:{
                 accept:"application/json",

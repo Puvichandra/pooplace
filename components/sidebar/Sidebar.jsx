@@ -10,7 +10,9 @@ import {AiFillPicture} from 'react-icons/ai'
 import {DiAtom} from 'react-icons/di'
 import {GiRadioactive} from 'react-icons/gi'
 import styles from '../../styles/containerstyle.module.css';
-
+import {GiSuspensionBridge} from 'react-icons/gi'
+import {HiPhotograph} from 'react-icons/hi'
+import {GiMiner} from 'react-icons/gi'
 
 const Sidebar = (props) => {
 
@@ -28,7 +30,10 @@ const Sidebar = (props) => {
         <IoMdArrowDropleft className={classes.close__icon} onClick={props.toggle}/>
   
         <div className={classes.logo}>
+          <a href="https://www.pooplace.co/">
+
           <img src="img/white.png" alt="hh" />
+          </a>
         </div>
 
 
@@ -36,10 +41,10 @@ const Sidebar = (props) => {
           <h3>Menu</h3>
           <ul>
             <a  href="#" className={activePageone===1?classes.activeNav:""} onClick={()=>{setPageOne(1); props.func(['','none','none','none','none']); props.pageno(1);}} ><li><BsShopWindow className={classes.sidebar__icons} />Explore</li></a>
-            <a  href="#" className={activePageone===2?classes.activeNav:""} onClick={()=>{setPageOne(2); props.func(['none','','none','none','none']); props.pageno(2);}} ><li><BsShopWindow className={classes.sidebar__icons} />Mint NFTs</li></a>
-            <a  href="#" className={activePageone===3?classes.activeNav:""} onClick={()=>{setPageOne(3); props.func(['none','none','','none','none']); props.pageno(3);}} ><li><BsShopWindow className={classes.sidebar__icons} />Bridge NFTs</li></a>
-            <a  href="#" className={activePageone===4?classes.activeNav:""} onClick={()=>{setPageOne(4); props.func(['none','none','none','','none']); props.pageno(4);}} ><li><BsShopWindow className={classes.sidebar__icons} />My NFTs</li></a>
-            <a href="#" className={activePageone===5?classes.activeNav:""} onClick={()=>{setPageOne(5);props.func(['none','none','none','none','']);props.pageno(5);}}><li><DiAtom className={classes.sidebar__icons}  />PooGrow Genesis Mint</li></a>
+            <a  href="#" className={activePageone===2?classes.activeNav:""} onClick={()=>{setPageOne(2); props.func(['none','','none','none','none']); props.pageno(2);}} ><li><GiMiner className={classes.sidebar__icons} />Mint NFTs</li></a>
+            <a  href="#" className={activePageone===3?classes.activeNav:""} onClick={()=>{setPageOne(3); props.func(['none','none','','none','none']); props.pageno(3);}} ><li><GiSuspensionBridge className={classes.sidebar__icons} />Bridge NFTs</li></a>
+            <a  href="#" className={activePageone===4?classes.activeNav:""} onClick={()=>{setPageOne(4); props.func(['none','none','none','','none']); props.pageno(4);}} ><li><HiPhotograph className={classes.sidebar__icons} />My NFTs</li></a>
+            {/* <a href="#" className={activePageone===5?classes.activeNav:""} onClick={()=>{setPageOne(5);props.func(['none','none','none','none','']);props.pageno(5);}}><li><DiAtom className={classes.sidebar__icons}  />PooGrow Genesis Mint</li></a> */}
             {/* <a  href="#" className={activePageone===5?classes.activeNav:""} onClick={()=>{setPageOne(5); props.func(['none','none','none','none','']);props.pageno(5);}} ><li><GiRadioactive className={classes.sidebar__icons} />PooGrow Mini Mint</li></a> */}
             {/* <a href="#" className='active'><li><MdOutlineExplore className='sidebar__icons' />Explore</li></a> */}
             {/* <a href="#"><li><BsCardChecklist className='sidebar__icons' />Listing</li></a> */}

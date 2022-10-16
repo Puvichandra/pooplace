@@ -19,6 +19,11 @@
     box-shadow: var(--box-shadow);
 }
 
+.mint__top{
+    display: flex;
+
+    justify-content: flex-end;
+}
 
 @media screen and (max-width: 530px){
 

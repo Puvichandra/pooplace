@@ -1,8 +1,9 @@
 import { useEffect,useState } from 'react';
 import classes from '../mynfts/mynfts.module.css';
+import styles1 from '../collectionpage/collection.module.css' 
 import {ethers } from "ethers";
 import mktplace  from "../../contracts/marketplace.json";
-import Topnav from '../topnav/topnav';
+import Topnav from '../topnav/Topnav';
 import styles from '../../styles/containerstyle.module.css';
 import Nftbridge from '../nftbridge/Nftbridge';
 import  axios, { Axios } from 'axios';
@@ -140,12 +141,12 @@ export default function Collection(props) {
 
 
   return (
-    <div style={{display: `${props.display}`}}  className={`${classes.main} ${styles.container}`}>
+    <div style={{display: props.collectionActive ? '' : 'none'}}  className={`${classes.main} ${styles.container}`}>
      
-    <Topnav address={props.address} connect={props.connect}  walletdiscon={props.walletdiscon}  walletswitch={props.walletswitch}
-     getSearchText={props.getSearchText} sethasmore={sethasmore}/>
-      <h1 className={styles.container}>My NFTs</h1>
-      <div id="scrollableDiv" style={{ height: 500, overflow: "auto" }}>
+    {/* <Topnav address={props.address} connect={props.connect}  walletdiscon={props.walletdiscon}  walletswitch={props.walletswitch}
+     getSearchText={props.getSearchText} sethasmore={sethasmore} collect ={props.collect}/> */}
+      <h1 className={styles.container}>Collection</h1>
+      <div id="scrollableDiv" style={{ height: '100vh', overflow: "auto" }} className={styles1.scroll}>
       <InfiniteScroll
             dataLength={arrlength}
             next={fetchData(totsupplynft,cnft)}
@@ -153,7 +154,7 @@ export default function Collection(props) {
             loader={<h4>Loading...</h4>}
             scrollableTarget="scrollableDiv"
           >
-          <div className={`${classes.nftgrid__container} ${styles.container}`}>
+          <div className={`${classes.nftgrid__container} ${styles.container} ${styles1.scrollContent}`}>
           {nfts.map((nft,index)=> 
           <div key={index} className='basis-1/5'>
           <div className={classes.nft__card}>

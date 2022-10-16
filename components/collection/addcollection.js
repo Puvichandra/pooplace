@@ -186,7 +186,7 @@ const getDatajson=()=>{
               ref={imgref}
               {...register("coinimage", {required:true}) }
               onChange={(e)=>_handleImageChange(e)}
-              onLoad={(e)=>setChandra()}
+              // onLoad={(e)=>setChandra()}
                />
             <div className="w-24 h-24  border-2 border-solid border-txtborderColor rounded-lg mx-auto">
             {imagePreview}
