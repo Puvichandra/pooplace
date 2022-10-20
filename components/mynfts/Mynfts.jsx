@@ -199,7 +199,7 @@ export default function MyNftPage(props) {
 //    </div>
   
 //    <div className='py-3 pl-5'>
-//    <buttton onClick={()=>relistNFT(nft.tokenid,nft.contractaddress)}className=" w-3/4 border-2 border-solid border-red-500 text-white rounded-2xl px-5 ">List for Resale</buttton>
+//    <buttton onClick={()=>relistNFT(nft.tokenid,nft.contractaddress)}className=" w-3/4 border-2 border-solid border-red-500 text-white rounded-2xl px-5 ">Listtt for Resale</buttton>
 //    </div>
    
 //  </div>
